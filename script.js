@@ -36,7 +36,7 @@ function startGame() {
 
     // Müziği başlat ve ses seviyesini çok düşük yap
     audio.play();
-    audio.volume = 0.1; // Başlangıçta çok düşük ses seviyesi
+    audio.volume = 0.01; // Başlangıçta çok düşük ses seviyesi
 }
 
 // Fare ve dokunmatik hareketleri için
@@ -61,7 +61,7 @@ function moveMum(event) {
     ctx.fillStyle = "rgba(0, 0, 0, 0.9)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    const gradient = ctx.createRadialGradient(x, y, 30, x, y, 150); // Işık yayılan alanı kısalttık
+    const gradient = ctx.createRadialGradient(x, y, 30, x, y, 80); // Işık yayılan alanı kısalttık
     gradient.addColorStop(0, "rgba(255, 255, 200, 0.6)");
     gradient.addColorStop(0.5, "rgba(255, 255, 150, 0.3)");
     gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
@@ -88,7 +88,7 @@ function moveMum(event) {
     }
 
     // Ses seviyesini mesafeye göre ayarla
-    let volume = Math.max(0.1, Math.min(1, (500 - distance) / 500)); // Min ses seviyesi 0.1
+    let volume = Math.max(0.01, Math.min(1, (500 - distance) / 500)); // Min ses seviyesi 0.1
     audio.volume = volume;
 }
 
