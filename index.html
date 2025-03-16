@@ -10,6 +10,7 @@
             overflow: hidden;
             background: black;
             position: relative;
+            font-family: Arial, sans-serif;
         }
         #canvas {
             position: absolute;
@@ -18,28 +19,62 @@
         }
         #mum {
             position: absolute;
-            width: 100px;
+            width: 80px;
             pointer-events: none;
         }
         #elif-text {
             position: absolute;
-            font-size: 48px;
+            font-size: 50px;
             color: white;
             font-weight: bold;
-            top: 500px;
-            left: 500px;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.2s;
+            top: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.9;
+        }
+        #welcome-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 24px;
+        }
+        #start-button {
+            padding: 15px 30px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 50%;
         }
     </style>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
-    <img id="mum" src="mum.png" alt="Mum">
-    <div id="elif-text">Elif</div>
-    
-    <!-- JavaScript dosyasını bağlıyoruz -->
+    <!-- Hoşgeldiniz ekranı -->
+    <div id="welcome-screen">
+        <div>Hoşgeldiniz!</div>
+        <button id="start-button">Oyunu Başlat</button>
+    </div>
+
+    <!-- Oyun ve diğer içerikler -->
+    <canvas id="canvas" style="display: none;"></canvas>
+    <img id="mum" src="mum.png" alt="Mum" style="display: none;">
+    <div id="elif-text" style="display: none;">Elif</div>
+
+    <!-- Müzik dosyasını ekliyoruz -->
+    <audio id="background-music" loop>
+        <source src="muzik.mp3" type="audio/mp3">
+        Tarayıcınız audio etiketini desteklemiyor.
+    </audio>
+
     <script src="script.js"></script>
 </body>
 </html>
